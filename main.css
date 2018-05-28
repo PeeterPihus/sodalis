@@ -1,0 +1,117 @@
+.my-table {
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 13px Arial, sans-serif;
+}
+.my-table thead th {
+    background-color: #DDEFEF;
+    border: solid 1px #DDEEEE;
+    color: #336B6B;
+    padding: 10px;
+    text-align: left;
+    text-shadow: 1px 1px 1px #fff;
+}
+.my-table tbody td {
+    border: solid 1px #DDEEEE;
+    color: #333;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #fff;
+}
+.my-table-rounded {
+    border: none;
+}
+.my-table-rounded thead th {
+    background-color: #b3e6ff;
+    border: none;
+    text-shadow: 1px 1px 1px #ccc;
+    color: #333;
+}
+.my-table-rounded thead th a:hover {
+    background-color: #80d4ff;
+}
+.my-table-rounded thead th:first-child {
+    border-radius: 5px 0 0 0;
+}
+.my-table-rounded thead th:last-child {
+    border-radius: 0 10px 0 0;
+}
+.my-table-rounded tbody td {
+    border: none;
+    border-top: solid 1px #b3e6ff;
+    background-color: #b3e6ff;
+}
+.my-table-rounded tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+}
+.my-table-rounded tbody tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+}
+.info-stuff{
+    padding-left: 15px;
+}
+.info-stuff-name{
+    font-size: 40px;
+    font-weight: bold;
+    padding-bottom: 25px;
+}
+.my-row1{
+    margin-left: 1px !important;
+    margin-right: 1px !important;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #ffffff;
+}
+.container{
+    background-color: #e6e6e6;
+    /*background-color: #0000ff;*/
+}
+.my-container{
+    margin-top: -6px;
+}
+.table-responsive{
+    background-color: #ffffff;
+    border: solid 1px #bfbfbf;
+}
+.my-table-header{
+    background-color: #cccccc;
+}
+.price-list-item{
+    background-color: #ffffff;
+    word-break: break-all;
+}
+
+#myInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+}
+
+#myTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+}
+
+#myTable th, #myTable td {
+    text-align: left;
+    padding: 12px;
+}
+
+#myTable tr {
+    border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+    background-color: #f1f1f1;
+}
