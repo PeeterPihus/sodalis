@@ -21,10 +21,6 @@
         echo $frontLink.'add_patient.php"> Lisa klient '.$endLink;
         echo $frontLink.'patient_info.php"> Sissetulevad aja kinnipanemised '.$endLink;
         break;
-      case 'clerk':
-        echo $frontLink.'add_patient.php"> Lisa klient '.$endLink;
-        echo $frontLink.'patient_info.php"> Sissetulevad aja kinnipanemised '.$endLink;
-        break;
       default:
         // code...
         break;

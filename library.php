@@ -48,7 +48,7 @@
                 $_SESSION['user-type'] = 'admin';
             }
 
-            if ($table == 'users' || $table == 'doctors' || $table == 'clerks') {
+            if ($table == 'users' || $table == 'doctors') {
                 $sql = "SELECT fullname FROM $table WHERE email = '$email_id' AND password = '$password';";
 
                 $result = $connection->query($sql);
@@ -57,8 +57,6 @@
                 $_SESSION['fullname'] = $fullname;
                 if ($table == 'users') {
                     $_SESSION['user-type'] = 'normal';
-                } elseif ($table == 'clerks') {
-                    $_SESSION['user-type'] = 'clerk';
                 } else {
                     $_SESSION['user-type'] = 'doctor';
                 }
@@ -92,9 +90,6 @@
                 $sql = "INSERT INTO $table VALUES (NULL ,'$email', '$password', '$phone', '$adress', '$fullname');";
                 break;
             case 'doctors':
-                $sql = "INSERT INTO $table VALUES ('$email', '$password', '$fullname');";
-                break;
-            case 'clerks':
                 $sql = "INSERT INTO $table VALUES ('$email', '$password', '$fullname');";
                 break;
             default:
@@ -152,28 +147,6 @@
         }
     }
 
-  function enter_patient_info($full_name_unsafe, $age_unsafe, $phone_no_unsafe, $address_unsafe)
-  {
-      global $connection, $error_flag,$result;
-
-      $full_name = ucfirst(secure($full_name_unsafe));
-      $age = secure($age_unsafe);
-      $phone_no = secure($phone_no_unsafe);
-      $address = secure($address_unsafe);
-
-      $sql = "INSERT INTO `patient_info` VALUES (NULL, '$full_name', $age, '$phone_no','$address');";
-
-      if ($connection->query($sql) === true) {
-          echo status('record-success');
-
-          return $connection->insert_id;
-      } else {
-          echo status('record-fail');
-
-          return 0;
-      }
-  }
-
     function appointment_booking($result_id_unsafe, $apDate_unsafe, $apTime_unsafe, $apFullname_unsafe, $apReason_unsafe)
     {
         global $connection;
@@ -221,34 +194,6 @@
         echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
     }
 
-    function update_appointment_info($appointment_no_unsafe, $column_name_unsafe, $data_unsafe)
-    {
-        global $connection;
-
-        $sql;
-
-        $appointment_no = (int) secure($appointment_no_unsafe);
-        $column_name = secure($column_name_unsafe);
-        $data = secure($data_unsafe);
-
-        if ($column_name == 'payment_amount') {
-            $data = (int) $data;
-            $sql = "UPDATE `appointments` SET `payment_amount` = '$data', `case_closed` = 'no' WHERE appointment_no` = $appointment_no";
-        } else {
-            $sql = "UPDATE appointments SET $column_name = '$data' WHERE appointment_no = $appointment_no;";
-        }
-        echo $sql;
-        if ($connection->query($sql) === true) {
-            echo status('update-success');
-
-            return 1;
-        } else {
-            echo status('update-fail');
-            echo 'Error: '.$sql.'<br>'.$connection->error;
-
-            return 0;
-        }
-    }
 
     function getPatientsFor($doctor = 'Dentist')
     {
@@ -389,23 +334,6 @@ function addPetInfo($unsafe_pet_id, $unsafe_pet_info, $unsafe_pet_date)
         }
     }
 
-    function appointment_status($appointment_no_unsafe)
-    {
-        global $connection;
-
-        $appointment_no = secure($appointment_no_unsafe);
-        $i = 0;
-
-        $result = $connection->query("SELECT doctors_suggestion FROM appointments WHERE appointment_no=$appointment_no;");
-        if ($result === false) {
-            return 0;
-        } else {
-            ++$i;
-        }
-
-        return $i;
-    }
-
     function delete($table, $id_unsafe)
     {
         global $connection;
@@ -467,14 +395,6 @@ function addPetInfo($unsafe_pet_id, $unsafe_pet_info, $unsafe_pet_date)
             }
         }
     }
-    function noAccessForClerk()
-    {
-        if (isset($_SESSION['user-type'])) {
-            if ($_SESSION['user-type'] == 'clerk') {
-                echo '<script type="text/javascript">window.location = "all_appointments.php"</script>';
-            }
-        }
-    }
 
     function noAccessForAdmin()
     {
@@ -490,7 +410,6 @@ function addPetInfo($unsafe_pet_id, $unsafe_pet_info, $unsafe_pet_date)
         if (isset($_SESSION['user-type'])) {
             noAccessForNormal();
             noAccessForAdmin();
-            noAccessForClerk();
             noAccessForDoctor();
         }
     }
