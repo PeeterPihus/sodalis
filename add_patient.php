@@ -19,7 +19,7 @@
 <!--  <h2>Tere, --><?php //echo $_SESSION["fullname"];?><!--!</h2>-->
 <!--      <div class='alert alert-info'>-->
 <!--              <strong>Info!</strong> Mingi teade - --><?// echo date("d/m/y"); ?><!--. mingi asi.</div>-->
-      <h3>Sisesta info</h3>
+<!--      <h3>Sisesta info</h3>-->
     <?php
     if (isset($_POST['uemail'])) {
         $i = register($_POST['uemail'],$_POST['upassword'],$_POST['uphone'],$_POST['uadress'],$_POST['ufullname'],"users");

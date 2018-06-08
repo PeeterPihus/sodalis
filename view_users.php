@@ -13,10 +13,10 @@ noAccessForNormal();
 noAccessIfNotLoggedIn();
 ?>
 <div class="container">
-    <h2>Tere, <?php echo $_SESSION["fullname"]; ?>!</h2>
-    <div class='alert alert-info'>
-        <strong>Info!</strong> Mingi teade - <? echo date("d/m/y"); ?>. mingi asi.
-    </div>
+<!--    <h2>Tere, --><?php //echo $_SESSION["fullname"]; ?><!--!</h2>-->
+<!--    <div class='alert alert-info'>-->
+<!--        <strong>Info!</strong> Mingi teade - --><?// echo date("d/m/y"); ?><!--. mingi asi.-->
+<!--    </div>-->
     <h3>Kasutaja andmed</h3>
     <table class="table table-striped">
         <?php

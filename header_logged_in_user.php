@@ -30,26 +30,35 @@ if (!isset($_SESSION)) {
 <!--                        <span class="icon-bar"></span>-->
 <!--                        <span class="icon-bar"></span>-->
                     </button>
-                    <a class="navbar-brand" href="index_logged.php">Sodalis</a>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
+<!--                    <a class="navbar-brand" href="index_logged.php">Sodalis</a>-->
+<!--                </div>-->
+<!--                <div class="collapse navbar-collapse" id="myNavbar">-->
 
                         <?php
                         if (isset($_SESSION['user-type'])) {
 
                             switch ($_SESSION['user-type']) {
                                 case 'normal':
+
+                                    echo "<a class='navbar-brand' href='index_logged.php'>Sodalis</a>";
+                                    echo "</div>";
+                                    echo "<div class='collapse navbar-collapse' id='myNavbar'>";
+
                                     echo "<ul class='nav navbar-nav'>";
                                     echo "<li><a href='info.php'>Kontaktid</a></li>";
                                     echo "<li><a href='price-list.php'>Hinnakiri</a></li>";
-                                    echo "<li><a href='set_appointment_user.php'>Pane aeg kinni</a></li>";
+                                    echo "<li><a href='set_appointment_user.php'>Broneeri aeg</a></li>";
                                     echo "<li><a href='mypets.php'>Minu loomad</a></li>";
                                     echo "</ul>";
                                     break;
                                 case 'doctor':
+                                    echo "<a class='navbar-brand' href='logout.php'>Sodalis</a>";
+                                    echo "</div>";
+                                    echo "<div class='collapse navbar-collapse' id='myNavbar'>";
+
                                     echo "<ul class='nav navbar-nav'>";
                                     echo "<li><a href='add_patient.php'>Lisa kasutaja</a></li>";
-                                    echo "<li><a href='patient_info.php'>Sissetulevad aja kinnipanemised</a></li>";
+                                    echo "<li><a href='patient_info.php'>Broneeritud ajad</a></li>";
                                     echo "<li><a href='user_list.php'>Kasutajad</a></li>";
                                     echo "</ul>";
                                     break;

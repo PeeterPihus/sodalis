@@ -12,10 +12,10 @@ noAccessForAdmin();
 noAccessIfNotLoggedIn();
 ?>
 <div class="container">
-    <h2>Tere, <?php echo $_SESSION["fullname"]; ?>!</h2>
-    <div class='alert alert-info'>
-        <strong>Info!</strong> Mingi teade - <? echo date("d/m/y"); ?>. mingi asi.
-    </div>
+<!--    <h2>Tere, --><?php //echo $_SESSION["fullname"]; ?><!--!</h2>-->
+<!--    <div class='alert alert-info'>-->
+<!--        <strong>Info!</strong> Mingi teade - --><?// echo date("d/m/y"); ?><!--. mingi asi.-->
+<!--    </div>-->
     <h3>Sisesta looma andmed, et lisada</h3>
     <?php
     if (isset($_POST['pet_name'])) {
@@ -51,8 +51,8 @@ noAccessIfNotLoggedIn();
         </div>
 
         <div class="form-group">
-            <input type="submit" class="btn btn-primary">
-            <input type="reset" name="" class="btn btn-danger">
+            <input type="submit" value="Edasi" class="btn btn-primary">
+<!--            <input type="reset" name="" class="btn btn-danger">-->
         </div>
     </form>
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Otsi nime järgi">

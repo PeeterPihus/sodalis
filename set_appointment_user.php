@@ -16,9 +16,9 @@ if($_SESSION["user-type"] != 'normal'){
 }
 ?>
 <div class="container">
-    <h2>Tere, <?php echo $_SESSION["username"];?>!</h2>
-    <div class='alert alert-info'>
-        <strong>Info!</strong> Mingi teade - <? echo date("d/m/y"); ?>. mingi asi.</div>
+<!--    <h2>Tere, --><?php //echo $_SESSION["username"];?><!--!</h2>-->
+<!--    <div class='alert alert-info'>-->
+<!--        <strong>Info!</strong> Mingi teade - --><?// echo date("d/m/y"); ?><!--. mingi asi.</div>-->
     <h3>Sisesta info</h3>
     <?php
     if(isset($_POST['apfullname'])){

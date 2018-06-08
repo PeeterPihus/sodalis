@@ -12,11 +12,11 @@ noAccessForAdmin();
 noAccessIfNotLoggedIn();
 ?>
 <div class="container">
-    <h2>Tere, <?php echo $_SESSION["fullname"]; ?>!</h2>
-    <div class='alert alert-info'>
-        <strong>Info!</strong> Mingi teade - <? echo date("d/m/y"); ?>. mingi asi.
-    </div>
-    <h3>Kasutaja andmed</h3>
+<!--    <h2>Tere, --><?php //echo $_SESSION["fullname"]; ?><!--!</h2>-->
+<!--    <div class='alert alert-info'>-->
+<!--        <strong>Info!</strong> Mingi teade - --><?// echo date("d/m/y"); ?><!--. mingi asi.-->
+<!--    </div>-->
+<!--    <h3>Kasutaja andmed</h3>-->
     <?php
         if (isset($_POST['ainfo'])) {
                 addPetInfo($_POST['aid'], $_POST['atime'], $_POST['ainfo']);
@@ -25,7 +25,7 @@ noAccessIfNotLoggedIn();
     <div class="row">
         <div class="col col-xl-6 col-sm-6" id="register1">
             <form method="post" action="view_animal_data.php">
-                <h2>Kasutaja lisamine</h2>
+                <h2>Looma info lisamine</h2>
                 <h4>* Kohustuslik</h4>
                 <div class="form-group">
                     <label for="usr">Info: *</label>
@@ -38,13 +38,13 @@ noAccessIfNotLoggedIn();
                 </div>
 
                 <div class="form-group">
-                    <label for="usr">Aeg: *</label>
-                    <input type="hidden" class="form-control" name="ai" value="<?php echo $_GET['id_pet'];?>">
+<!--                    <label for="usr">Aeg: *</label>-->
+                    <input type="hidden" class="form-control" name="aid" value="<?php echo $_GET['id_pet'];?>">
                 </div>
 
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary" value="Lisa">
-                    <input type="reset" name="" class="btn btn-danger"></button>
+<!--                    <input type="reset" name="" class="btn btn-danger"></button>-->
                 </div>
             </form>
         </div>
@@ -96,7 +96,7 @@ noAccessIfNotLoggedIn();
                 $link = "<td ><a href= '#'>";
                 $endingTag = '</a></td>';
 
-                echo "$link" . $row['pet_name'] . "$endingTag";
+                echo "<td>". $row['pet_name'] ."</td>";
                 echo "<td>". $row['prescription'] ."</td>";
                 echo "<td>". $row['data_date'] ."</td>";
                 echo "<td>". $row['pet_breed'] ."</td>";

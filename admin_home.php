@@ -7,7 +7,6 @@ if (!isset($_SESSION)) {
 <?php
 include("library.php");
 
-noAccessForClerk();
 noAccessForDoctor();
 noAccessForNormal();
 
@@ -49,7 +48,6 @@ $result_price = mysqli_query($connect, $query);
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="register.php"><span class="glyphicon glyphicon-log-in"></span> Registreeri</a></li>
                         <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logi välja</a>
                         </li>
                     </ul>
@@ -65,7 +63,6 @@ $result_price = mysqli_query($connect, $query);
     </div>
 </div>
 <div class="container my-container">
-    <h1 align=center>Admini sisselogimine</h1>
 
     <?php
     if (isset($_POST['demail'])) {
@@ -99,8 +96,8 @@ $result_price = mysqli_query($connect, $query);
             </div>
 
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Register">
-                <input type="reset" name="" class="btn btn-danger"></button>
+                <input type="submit" class="btn btn-primary" value="Lisa">
+<!--                <input type="reset" name="" class="btn btn-danger"></button>-->
             </div>
         </form>
         <form method="post" action="admin_home.php">
@@ -125,7 +122,7 @@ $result_price = mysqli_query($connect, $query);
                     ?>
                 </select></div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Delete">
+                <input type="submit" class="btn btn-primary" value="Kustuta">
             </div>
         </form>
         <form method="post" action="admin_home.php">
@@ -150,7 +147,7 @@ $result_price = mysqli_query($connect, $query);
                     ?>
                 </select></div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Delete">
+                <input type="submit" class="btn btn-primary" value="Kustuta">
             </div>
         </form>
     </div>

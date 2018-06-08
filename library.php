@@ -98,12 +98,9 @@
         }
 
         if ($connection->query($sql) === true) {
-            echo status('record-success');
-            if ($table == 'users' && $error_flag == 0) {
-                return login($email, $password);
-            }
+//            echo status('record-success');
         } else {
-            echo status('record-fail');
+//            echo status('record-fail');
         }
     }
 
@@ -179,10 +176,9 @@
         $sql = "INSERT INTO user_pet VALUES (NULL, '$result_id', '$pet_breed', '$pet_age', '$pet_name')";
 
         if ($connection->query($sql) === true) {
-            echo status('appointment-success', $connection->insert_id);
+            echo status('Loom edukalt lisatud');
         } else {
-            echo status('appointment-fail');
-            echo 'Error: '.$sql.'<br>'.$connection->error;
+            echo status('Midagi läks valesti');
         }
     }
 
@@ -245,10 +241,9 @@ function addPetInfo($unsafe_pet_id, $unsafe_pet_info, $unsafe_pet_date)
     $sql = "INSERT INTO pet_data VALUES (NULL, '$pet_id', '$pet_date', '$pet_info')";
 
     if ($connection->query($sql) === true) {
-        echo status('appointment-success', $connection->insert_id);
+        echo status('info edukalt lisatud');
     } else {
-        echo status('appointment-fail');
-        echo 'Error: '.$sql.'<br>'.$connection->error;
+        echo status('midagi läks valesti');
     }
 }
 

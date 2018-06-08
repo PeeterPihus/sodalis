@@ -13,10 +13,10 @@ noAccessForNormal();
 noAccessIfNotLoggedIn();
 ?>
 <div class="container">
-    <h2>Tere, <?php echo $_SESSION["fullname"]; ?>!</h2>
-    <div class='alert alert-info'>
-        <strong>Info!</strong> Mingi teade - <? echo date("d/m/y"); ?>. mingi asi.
-    </div>
+<!--    <h2>Tere, --><?php //echo $_SESSION["fullname"]; ?><!--!</h2>-->
+<!--    <div class='alert alert-info'>-->
+<!--        <strong>Info!</strong> Mingi teade - --><?// echo date("d/m/y"); ?><!--. mingi asi.-->
+<!--    </div>-->
     <h3>Kasutaja andmed</h3>
     <!--    --><?php
     //    if (isset($_POST['pet_name'])) {
@@ -64,7 +64,7 @@ noAccessIfNotLoggedIn();
             <th style="width:19%;">Email</th>
             <th style="width:19%;">Telefon</th>
             <th style="width:19%;">Aadress</th>
-            <th style="width:19%;">Password</th>
+<!--            <th style="width:19%;">Password</th>-->
         </tr>
         </thead>
 
@@ -102,7 +102,7 @@ noAccessIfNotLoggedIn();
                 echo "<td>". $row['email'] ."</td>";
                 echo "<td>". $row['phone'] ."</td>";
                 echo "<td>". $row['adress'] ."</td>";
-                echo "<td>". $row['password'] ."</td>";
+//                echo "<td>". $row['password'] ."</td>";
                 echo '</tr>';
             }
         }

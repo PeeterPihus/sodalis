@@ -19,9 +19,7 @@ if (isset($_SESSION['user-type'])) {
     <div class="container my-container">
         <div>
             <p class="info-stuff-name">Hinnakiri</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. </p>
+            <p>Teenindamisel väljaspool kliiniku lahtiolekuaega on menetluste tasu kahekordne. Kui patsient ohustab kliiniku personali tervist, võib loomaarst keelduda patsiendi teenindamisest. Abi andmisest on õigus keelduda, kui loomaomanik on arsti solvanud või jätnud teenuse eest tasumata</p>
         </div>
         <div>
             <?php

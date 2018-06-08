@@ -2,6 +2,7 @@
 session_start();
 ?>
 <link href="bootstrap.min.css" rel="stylesheet">
+<link href="main.css" rel="stylesheet">
 
 <?php
 include("header.php");
@@ -11,8 +12,8 @@ noAccessIfLoggedIn();
 
 <div class="container">
 
-    <h1>Loomakliink</h1>
-    <p class="block-quote">Minigi tekst</p>
+    <h1>Loomakliink Sodalis</h1>
+<!--    <p class="block-quote">Minigi tekst</p>-->
     <?php
     if(isset($_POST['lemail'])){
         $i = login($_POST['lemail'],$_POST['lpassword'],"users");

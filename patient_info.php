@@ -10,14 +10,13 @@ include("header_logged_in_user.php");
 include("library.php");
   noAccessIfNotLoggedIn();
   noAccessForNormal();
-  noAccessForClerk();
   noAccessForAdmin();
 
 //  include 'nav-bar.php';
 ?>
 <div class="container">
-<h2>Ettetulevad ajad</h2>
-<p>Vajuta lahtri peal et täiendada</p>
+<h2>Broneeritud ajad</h2>
+<p>Vajuta lingi peal, et vaadata kasutaja andmeid</p>
 
 <table class='table table-striped text-center '>
   <thead class="thead-inverse">

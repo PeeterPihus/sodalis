@@ -9,8 +9,8 @@ include("library.php");
 noAccessIfLoggedIn();
 ?>
 <div class="container">
-    <h1>Loomakliink</h1>
-    <p class="block-quote">Minigi tekst</p>
+<!--    <h1>Loomakliink</h1>-->
+<!--    <p class="block-quote">Minigi tekst</p>-->
     <?php
     $first_pass = '';
     $second_pass = '';
@@ -31,7 +31,7 @@ noAccessIfLoggedIn();
     <div class="row">
         <div class="col col-xl-6 col-sm-6" id="register1">
             <form method="post" action="register.php">
-                <h2>Registreeri</h2>
+                <h2>Registreerimine</h2>
                 <h4>* Kohustuslik</h4>
                 <div class="form-group">
                     <label for="usr">Täisnimi: *</label>

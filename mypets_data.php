@@ -12,11 +12,11 @@ noAccessForAdmin();
 noAccessIfNotLoggedIn();
 ?>
 <div class="container">
-    <h2>Tere, <?php echo $_SESSION["fullname"]; ?>!</h2>
-    <div class='alert alert-info'>
-        <strong>Info!</strong> Mingi teade - <? echo date("d/m/y"); ?>. mingi asi.
-    </div>
-    <h3>Kasutaja andmed</h3>
+<!--    <h2>Tere, --><?php //echo $_SESSION["fullname"]; ?><!--!</h2>-->
+<!--    <div class='alert alert-info'>-->
+<!--        <strong>Info!</strong> Mingi teade - --><?// echo date("d/m/y"); ?><!--. mingi asi.-->
+<!--    </div>-->
+<!--    <h3>Kasutaja andmed</h3>-->
     <table class="table table-striped">
         <?php
         if(isset($_POST['upSugg'])){
@@ -31,7 +31,7 @@ noAccessIfNotLoggedIn();
             $usr_id = $_GET['id'];
             $user_details = getPetData($usr_id);
             $data = $user_details->fetch_array();
-            $user_info = getAllPatientDetail($data['owner_id']);
+            $user_info = getAllPatientDetail($data['id']);
 
             while($row = $user_info->fetch_array())
             {
@@ -40,16 +40,16 @@ noAccessIfNotLoggedIn();
                 $endingTag = "</td></tr>";
                 echo "<tr>";   // appointment_no, full_name, dob, weight, phone_no, address, blood_group, medical_condition
                 echo "$link Täisnimi $mid". $row['fullname'] . "$endingTag";
-                echo "$link Email $mid" . $row['email'] . "$endingTag";
-                echo "$link Phone $mid" . $row['phone'] . "$endingTag";
-                echo "$link Adress $mid" . $row['adress'] . "$endingTag";
+                echo "$link E-mail $mid" . $row['email'] . "$endingTag";
+                echo "$link Telefon $mid" . $row['phone'] . "$endingTag";
+                echo "$link Aadress $mid" . $row['adress'] . "$endingTag";
                 echo "</tr>";
             }
         }
         ?>
 
     </table>
-    <h3>Kasutaja Loomad</h3>
+    <h3>Minu Loomad</h3>
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Otsi nime järgi">
     <table id="myTable">
         <tr class="header">
@@ -96,7 +96,7 @@ noAccessIfNotLoggedIn();
                 $link = "<td ><a href= '#'>";
                 $endingTag = '</a></td>';
 
-                echo "$link" . $row['pet_name'] . "$endingTag";
+                echo "<td>". $row['pet_name'] ."</td>";
                 echo "<td>". $row['prescription'] ."</td>";
                 echo "<td>". $row['data_date'] ."</td>";
                 echo "<td>". $row['pet_breed'] ."</td>";
